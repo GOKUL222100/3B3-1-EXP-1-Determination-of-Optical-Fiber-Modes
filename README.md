@@ -1,66 +1,60 @@
+# Ex No: 01 - Design & Implementation of CMOS Inverter Design Using Cadence EDA Tools
 
-# Exp 1 Mode Characteristics of Fiber Optic Cable
+## Aim
+The aim is to create and simulate a CMOS inverter circuit with Cadence EDA tools, assess its key electrical properties, and explore foundational CMOS principles, including the design workflow and simulation approaches.
 
-## 🎯 AIM
-To study the mode characteristics of fiber optic cable and observe the lower order Linearly Polarized (LP) modes.
+## Tools Required
 
----
+### Cadence EDA Suite
+- **Virtuoso Schematic Editor** (for circuit design)  
+- **Spectre Simulator** (for circuit simulation)  
 
-## 🧰 EQUIPMENTS REQUIRED
-1. LASER Source (633 nm – 1mW)  
-2. Source to Fiber Coupler  
-3. Single Mode Fiber  
-4. Fiber Holding Stand  
-5. Opaque Screen  
+### Process Design Kit (PDK)
+- CMOS technology library (e.g., 180nm, 45nm node)  
 
----
+### Computer System
+- Minimum **4GB RAM** and a **multi-core processor**
 
+## Procedure:
+### 1. Launch Cadence Virtuoso Environment:
+     Open the Cadence Virtuoso tool and set up the working library.
+     Create a new schematic cell view for the CMOS Inverter design.
+### 2. Schematic Design:
+    Select the NMOS and PMOS transistors from the library.
+    Connect the NMOS transistor with its source terminal to GND and its drain terminal to the output node.
+    Connect the PMOS transistor with its source terminal to VDD and its drain terminal to the same output node as NMOS.
+    Join the gate terminals of both transistors to form the input node.
+    Connect input voltage sources Vdc and Vpulse
+### 3. Simulation:
+    Check the Design for Errors and proceed for Simulation
+    Launch the Analog Design Environment (ADE).
+    Configure transient analysis for time-domain response.
+    Set the simulation parameters such as voltage sweep range and step size.
+    Use Spectre simulator to perform transient and DC analyses.
+### 4. Waveform Analysis:
+    Observe the output voltage waveform concerning the input voltage.
 
-## 📚 THEORY
+## Circuit Diagram:
+#### 1. Schematic of CMOS Inverter:
 
-The central spot carries 95% of the intensity for laser beams with Gaussian profile. I = Ioe-2(r / w) ^2 where e = 2.718 is the base of the natural logarithm. An accepted definition of a radius of a Gaussian beam is t 0.135 times its peak value Io. This radius is called spot size. The spot diameter is w.
-Spot Diameter (d) micron = Focal length of the Lens (f) mm x Laser beam full divergence angle (DA) mrad.
-In order to achieve maximum coupling efficiency, the fiber core diameter has to be bigger than the spot diameter.
-NA rays = Laser Beam Diameter (B.D.) 2 x Lens Focal Length (f)
-The source coupler is comprised of two base plates. One of the base plates contains a focusing lens
-and a female connector receptacle. The other base plate is attached onto the laser. An O-ring is sandwiched between the base plates. Threaded screws interconnect the two base plates. A screw driver
-to alter the angular orientation of one base plate relative to the	other can then adjust the screws.
- 
-The number of modes propagating through the fiber depends on V-number. If the fiber whose number is less than 2.045,	it allows to propagate single mode through it, so it is called as Single Mode fiber.
-A Multimode fiber, V-number is slightly greater than 2.045 but the number of allowed modes is small enough that they may be individually identified when the output of the fiber is examined.
-When V < 2.045, then only a single mode may propagate in the fiber waveguide. This mode is HE11 mode or LP01 – Linearly Polarized mode.
-When V > 2.045, other modes may propagate, when V is slightly greater than 2.045 i.e. V = 4.91 then 4 Linearly Polarized modes will propagate through fiber.
+![image](https://github.com/user-attachments/assets/4d006fa3-bf66-4b69-b314-ff0c102d19ce)
 
----
+#### 2. Transient Response Setup:
 
-## 🧪 PROCEDURE
+![image](https://github.com/user-attachments/assets/07823e7b-b03d-4291-8fdf-73d76481e0fa)
 
-1.1.	Keep optical bread board onto original and flat table surface, so that it will not toggle.
-2.	Fix the pre-fitted cylindrical head of the He-Ne laser source on to the surface of the bread board. Confirm the rigid ness of the mount.
-3.	Fix the laser to the fiber coupler mount on to the bread board with base plate orientation of it towards He-Ne laser exit.
-4.	Turn on the He-Ne laser and locate the beam spot on the central portion of the laser-fiber
-coupling lens assembly by adjusting the vertical and horizontal travel arrangement provided with the mount. Tighten the screws of the vertical and horizontal slots.
-5.	Now look for the back reflection of the He-Ne laser spot from the rod lens of the coupler. In case if you found the back spot, away from the exit of the cylindrical laser head of the laser, adjust the back-reflected spot going back in exit hole by slowly moving the four screws provided for the laser mount.
-6.	Confirm the central alignment of the laser beam at the exit of the laser fiber coupler by putting a white card sheet and zooming the spot on to it. In case the spot is found of center, adjust it to the center by slightly moving the screws of the laser mount.
-7.	Put the multimode optical patch cord on to the laser fiber coupler exit and fix the other end of the fiber in the fiber holding stand by moving the grub screws provided with the holder.
-8.	Notice the bright laser beam spot coming out of the fiber. Adjust the height of exit tip of the fiber to about 50mm. Min. from the white sheet of the paper.
- 
-9.	Observe the bright round shape circular spot with laser speckle pattern on to the screen. Multimode pattern can be refined by screws provided with laser-fiber coupler. Slightly adjusting or moving the screws on the laser mount, view the change in pattern of this multimode spot. After observing the multimode pattern, change multimode fiber optic patch cord with single mode fiber patch cord.
-10.	For single mode patch cord, the blur pattern of the various single mode patterns will appear on the screen. That is, single circular two lobes, three lobes and four lobes patterns can be very well observed by slightly adjusting the Allen screws of the laser-fiber coupler.
+#### 3. Voltage Transfer Characteristic (VTC)  Setup:
 
----
+   ![image](https://github.com/user-attachments/assets/012b773b-37d4-4b93-b5c7-5a163d3e4fdf)
 
 
-## 📊 OBSERVATION AND CALCULATION
+## Output
+#### 1.Transient Analysis Output
 
-- 
-Parameter of given fiber are,
-A = 4.5μm (core radius), N.A = 0.11, λ = 633nm V = 2 π x A x N.A / λ = 4.91
-From fig. shows only 4 LP modes propagates.
-Total number of modes = V2 / 2 = 4.912 / 2
-<img width="932" height="1015" alt="image" src="https://github.com/user-attachments/assets/09f47716-8ad0-42f6-a2d1-a9afa7590b4f" />
+![image](https://github.com/user-attachments/assets/b437da5b-7ce8-4bc8-8179-f04855ea10fc)
 
+## Results:
 
----
-## Tabulation
-## Result
+1.	Successfully designed the CMOS inverter schematic using Cadence EDA tools.
+2.	The simulation results demonstrated the correct logic operation of the inverter, where the output voltage switches between high (Vdd) and low (0V) levels, corresponding to the input voltage transitions.
+3.	The Voltage Transfer Characteristic (VTC) curve was plotted, showing the relationship between input and output voltages.
